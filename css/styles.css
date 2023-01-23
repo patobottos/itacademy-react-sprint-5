@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1500px;
+    padding-right: 1%;
+    padding-left: 1%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("/assets/img/danie-franco-smile_transp.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 900px;
+}
+
+.weather-container{
+    width: 100%;
+    height: 6vh;
+    top: 0;
+    background-color: #d2d2d2;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.main-joke {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.joke-container {
+    border: 1px solid rgb(245, 245, 245);
+    box-shadow: 5px 5px 5px #d0d0d0;;
+    width: 400px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border-radius: 9px;
+    }
+
+.joke-text {
+    max-width: 90%;
+}
+
+
+
