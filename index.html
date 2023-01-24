@@ -15,22 +15,40 @@
 
         <div class="weather-container">
             <img class="weather-img" src="" alt="weather-icon">
-            <p class="weather-degrees-min">º degrees min</p>
-            <p class="weather-degrees-max">º degrees max</p>
+            <p class="city"></p>
+            <p class="weather-temperature"></p>
+            <p class="weather-description"></p>
         </div>
 
         <div class="main-joke">
             <div class="joke-container">
-                <h2 class="joke-title">Ready to laugh?     <span>     😂 </span></h2> <br>
-                <p class="joke-text"><span id="fetched-new-joke"></span></p><br>
+                <h2 class="joke-title">Ready to laugh? <span> 🤩 </span></h2> <br>
+                <p class="joke-text"><span id="fetched-new-joke" style="display: block;"></span></p><br>
+                <div class="joke-btn-container" id="score-btn-container" style="display: none;">
+                    <form class="emojis-grid" action="">            
+                        <label class="emoji emoji1" for="1points">
+                            <input type="radio" id="1points" name="joke-score" value="1" class="radio">
+                            <span>😵</span>
+                        </label>
+
+                        <label class="emoji emoji2" for="2points">
+                            <input type="radio" id="2points" name="joke-score" value="2" class="radio">
+                            <span>😐</span>
+                        </label>
+ 
+                        <label class="emoji emoji3" for="3points">
+                            <input type="radio" id="3points" name="joke-score" value="3" class="radio">
+                            <span>😆</span>
+                        </label>
+
+                        <button class="joke-btn" id="btn-submitVote">Submit!</button>
+
+                    </form>
+                </div>
                 <button class="joke-btn" id="btn-next-joke">Next joke</button>
-                <br>
-                
             </div>
         </div>
-
     </div>
-
 
     <script src="index.js"></script>
 </body>
