@@ -1,13 +1,40 @@
 "use strict";
 
+// EXERCICI 6 - SELECT A RANDOM SVG FORM
+const selectRandomSVG = () => {
+  const randomSVG = document.querySelector(".joke-container");
+  const svgFormsArray = ['assets/svg/blob1.svg','assets/svg/blob2.svg','assets/svg/blob3.svg','assets/svg/blob4.svg','assets/svg/blob5.svg','assets/svg/blob6.svg','assets/svg/blob7.svg','assets/svg/blob8.svg'];
+  const svgArraySize = svgFormsArray.length;
+  //console.log(`tamaño array`,svgArraySize);
+  const svgNumber = Math.floor(Math.random() * svgArraySize);
+  //console.log('numero azar',svgNumber);
+  randomSVG.style.backgroundImage = `url(${svgFormsArray[svgNumber]})`;
+}
+
+// IDEA: SHOW THE TIME(HOUR & MINUTES)
+const showTime = () => {
+  let timeNow = new Date();
+  let hours = timeNow.getHours() <= 9 ? `0${timeNow.getHours()}` : `${timeNow.getHours()}`;
+  let minutes = timeNow.getMinutes() <= 9 ? `0${timeNow.getMinutes()}` : `${timeNow.getMinutes()}`;
+  let timeToShow = `${hours}:${minutes} hs.`;
+  
+  return timeToShow;
+} 
+
+
 // EXERCICI 4
 window.addEventListener("load", () => {
+  
   const weatherIcon = document.querySelector(".weather-img");
   const cityName = document.querySelector(".city");
   const temperatureValue = document.querySelector(".weather-temperature");
   const description = document.querySelector(".weather-description");
+  const timeStamp = document.querySelector(".time-stamp");
 
   const urlWeather = `https://api.weatherapi.com/v1/current.json?key=a2df7834642248acbd3153507232401&q=Barcelona&aqi=no`;
+
+  // SELECT A RANDOM SVG FORM AS BACKGROUND
+  selectRandomSVG();
 
   // RETRIEVE WEATHER
   const getWeather = async () => {
@@ -30,6 +57,10 @@ window.addEventListener("load", () => {
       cityName.innerHTML = fetchedCity;
       temperatureValue.innerHTML = ` ${fetchedTemperature}ºC `;
       description.innerHTML = fetchedDescription;
+      
+      // INSERT HOUR!
+      timeStamp.innerHTML = showTime();
+
     } catch (error) {
       console.log(error);
     }
@@ -130,27 +161,9 @@ const detectVote = () => {
 
 /// FUNCTION NEXT JOKE
 const askForNextJoke = () => {
+  selectRandomSVG();
   console.log("You've pressed the button!");
   let choice = randomSelector();
   choice === 1 ? getJoke1() : getJoke2();
   detectVote();
 }
-
-
-// ESBORRAR AL FINAL
-
-/*
-
-// FUNCTION SCORE JOKE
-btnSubmitVote.addEventListener("click", () => {
-  detectVote();
-  console.table(reportJokes);
-});
-
-
-/// RESET SELECTED OPTIONS 
-const resetRadios = () => {
-  allOptions.forEach(option => option.value = null );
-}
-
-*/
