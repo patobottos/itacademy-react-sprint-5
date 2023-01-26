@@ -7,7 +7,7 @@ ALUMNE: Patricio Bottos.
 LLOC I DATA: Barcelona, gener de 2023.
 
 
-Lliurament de l'sprint 5 de l'Itinerari de React de la IT Academy.
+Lliurament de l'sprint 5 de l'Itinerari de React de la IT Academy. Versió amb Typescript.
 
 ## CONTINGUTS:
 - Nivell 1
